@@ -26,7 +26,7 @@ const IntroPage: NextPage = () => {
       <EditorToRendererCommunicatorContextProvider>
         <div className={'flex-fill mt-3'}>
           <h1 dir='auto' className={'align-items-center d-flex justify-content-center flex-column'}>
-            <HedgeDocLogoWithText logoType={HedgeDocLogoType.COLOR_VERTICAL} size={HedgeDocLogoSize.BIG} />
+            <HedgeDocLogoWithText logoType={HedgeDocLogoType.COLOR_VERTICAL_WHITE} size={HedgeDocLogoSize.BIG} />
           </h1>
           <p className='lead'>
             <Trans i18nKey='app.slogan' />
