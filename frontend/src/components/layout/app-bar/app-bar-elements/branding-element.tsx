@@ -10,6 +10,7 @@ import {
   HedgeDocLogoType,
   HedgeDocLogoWithText
 } from '../../../common/hedge-doc-logo/hedge-doc-logo-with-text'
+import styles from '../navbar.module.scss'
 import Link from 'next/link'
 import React from 'react'
 import { Navbar } from 'react-bootstrap'
@@ -21,7 +22,7 @@ export const BrandingElement: React.FC = () => {
   const darkModeActivated = useDarkModeState()
 
   return (
-    <Navbar.Brand>
+    <Navbar.Brand className={styles.side}>
       <Link href='/' className='text-secondary text-decoration-none d-flex align-items-center'>
         <HedgeDocLogoWithText
           logoType={

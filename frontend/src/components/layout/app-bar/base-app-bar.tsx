@@ -8,16 +8,17 @@ import { SettingsButton } from '../../global-dialogs/settings-dialog/settings-bu
 import { BrandingElement } from './app-bar-elements/branding-element'
 import { HelpDropdown } from './app-bar-elements/help-dropdown/help-dropdown'
 import { UserElement } from './app-bar-elements/user-element'
+import styles from './navbar.module.scss'
 import type { PropsWithChildren } from 'react'
 import React from 'react'
 import { Nav, Navbar } from 'react-bootstrap'
 
 export const BaseAppBar: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <Navbar expand={true} className={'bg-light px-2 py-1 justify-content-between align-items-center'}>
+    <Navbar expand={true} className={'bg-light px-2 py-1 align-items-center'}>
       <BrandingElement />
-      <Nav className={'d-flex align-items-center'}>{children}</Nav>
-      <Nav className={'d-flex align-items-center justify-content-end gap-2'}>
+      <Nav className={`d-flex align-items-center ${styles.center}`}>{children}</Nav>
+      <Nav className={`d-flex align-items-center justify-content-end gap-2 flex-grow-1 ${styles.side}`}>
         <HelpDropdown />
         <SettingsButton />
         <NewNoteButton />
