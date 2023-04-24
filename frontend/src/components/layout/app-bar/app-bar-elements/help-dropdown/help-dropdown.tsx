@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 import { UiIcon } from '../../../../common/icons/ui-icon'
-import { CheatsheetHelpMenuEntry } from './help-menu-entries/cheatsheet-help-menu-entry'
-import { LegalHelpMenuEntries } from './help-menu-entries/legal-help-menu-entries'
-import { ProjectLinksHelpMenuEntry } from './help-menu-entries/project-links-help-menu-entry'
-import { ShortcutsHelpMenuEntry } from './help-menu-entries/shortcuts-help-menu-entry'
-import { VersionInfoHelpMenuEntry } from './help-menu-entries/version-info-help-menu-entry'
+import { HelpSubmenu } from './submenues/help-submenu'
+import { InstanceSubmenu } from './submenues/instance-submenu'
+import { LegalSubmenu } from './submenues/legal-submenu'
+import { ProjectLinksSubmenu } from './submenues/project-links-submenu'
+import { SocialLinksSubmenu } from './submenues/social-links-submenu'
 import React from 'react'
 import { Dropdown } from 'react-bootstrap'
 import { QuestionLg as IconQuestion } from 'react-bootstrap-icons'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 /**
  * Renders the help dropdown in the app bar.
@@ -26,18 +26,14 @@ export const HelpDropdown: React.FC = () => {
         <UiIcon icon={IconQuestion} />
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Header>
-          <Trans i18nKey={'help.help'} />
-        </Dropdown.Header>
-        <ShortcutsHelpMenuEntry />
-        <CheatsheetHelpMenuEntry />
+        <HelpSubmenu />
         <Dropdown.Divider />
-        <LegalHelpMenuEntries />
-        <Dropdown.Header>
-          <Trans i18nKey={'help.about'} />
-        </Dropdown.Header>
-        <VersionInfoHelpMenuEntry />
-        <ProjectLinksHelpMenuEntry />
+        <InstanceSubmenu />
+        <LegalSubmenu />
+        <Dropdown.Divider />
+        <ProjectLinksSubmenu />
+        <Dropdown.Divider />
+        <SocialLinksSubmenu />
       </Dropdown.Menu>
     </Dropdown>
   )

@@ -3,27 +3,27 @@
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import { useBooleanState } from '../../../../../../hooks/common/use-boolean-state'
-import { cypressId } from '../../../../../../utils/cypress-attribute'
-import { CheatsheetContent } from '../../../../../cheatsheet/cheatsheet-content'
-import { CheatsheetInNewTabButton } from '../../../../../cheatsheet/cheatsheet-in-new-tab-button'
-import { CommonModal } from '../../../../../common/modals/common-modal'
+import { useBooleanState } from '../../../../../../../hooks/common/use-boolean-state'
+import { cypressId } from '../../../../../../../utils/cypress-attribute'
+import { CheatsheetContent } from '../../../../../../cheatsheet/cheatsheet-content'
+import { CheatsheetInNewTabButton } from '../../../../../../cheatsheet/cheatsheet-in-new-tab-button'
+import { CommonModal } from '../../../../../../common/modals/common-modal'
+import { TranslatedDropdownItem } from '../../translated-dropdown-item'
 import React, { Fragment } from 'react'
-import { Dropdown, Modal } from 'react-bootstrap'
-import { Trans, useTranslation } from 'react-i18next'
+import { Modal } from 'react-bootstrap'
+import { Search as IconSearch } from 'react-bootstrap-icons'
 
 export const CheatsheetHelpMenuEntry: React.FC = () => {
-  const { t } = useTranslation()
   const [modalVisibility, showModal, closeModal] = useBooleanState()
 
   return (
     <Fragment>
-      <Dropdown.Item
+      <TranslatedDropdownItem
+        i18nKey={'appbar.help.help.cheatsheet'}
+        icon={IconSearch}
+        onClick={showModal}
         {...cypressId('open.cheatsheet-button')}
-        title={t('cheatsheet.button') ?? undefined}
-        onClick={showModal}>
-        <Trans i18nKey={'cheatsheet.button'}></Trans>
-      </Dropdown.Item>
+      />
       <CommonModal
         modalSize={'xl'}
         show={modalVisibility}

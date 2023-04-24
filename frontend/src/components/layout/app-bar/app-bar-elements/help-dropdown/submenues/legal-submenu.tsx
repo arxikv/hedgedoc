@@ -5,11 +5,13 @@
  */
 import { useFrontendConfig } from '../../../../../common/frontend-config-context/use-frontend-config'
 import { ShowIf } from '../../../../../common/show-if/show-if'
+import { DropdownHeader } from '../dropdown-header'
+import { TranslatedDropdownItem } from '../translated-dropdown-item'
 import React, { Fragment, useMemo } from 'react'
 import { Dropdown } from 'react-bootstrap'
 import { Trans, useTranslation } from 'react-i18next'
 
-export const LegalHelpMenuEntries: React.FC = () => {
+export const LegalSubmenu: React.FC = () => {
   useTranslation()
   const specialUrls = useFrontendConfig().specialUrls
   const linksConfigured = useMemo(
@@ -23,23 +25,16 @@ export const LegalHelpMenuEntries: React.FC = () => {
 
   return (
     <Fragment>
-      <Dropdown.Header>
-        <Trans i18nKey={'help.legal'} />
-      </Dropdown.Header>
+      <Dropdown.Divider />
+      <DropdownHeader i18nKey={'appbar.help.legal.header'} />
       <ShowIf condition={!!specialUrls.privacy}>
-        <Dropdown.Item href={specialUrls.privacy}>
-          <Trans i18nKey={'landing.footer.privacy'} />
-        </Dropdown.Item>
+        <TranslatedDropdownItem href={specialUrls.privacy} i18nKey={'appbar.help.legal.privacy'} />
       </ShowIf>
       <ShowIf condition={!!specialUrls.termsOfUse}>
-        <Dropdown.Item href={specialUrls.termsOfUse}>
-          <Trans i18nKey={'landing.footer.termsOfUse'} />
-        </Dropdown.Item>
+        <TranslatedDropdownItem href={specialUrls.termsOfUse} i18nKey={'appbar.help.legal.termsOfUse'} />
       </ShowIf>
       <ShowIf condition={!!specialUrls.imprint}>
-        <Dropdown.Item href={specialUrls.imprint}>
-          <Trans i18nKey={'landing.footer.imprint'} />
-        </Dropdown.Item>
+        <TranslatedDropdownItem href={specialUrls.imprint} i18nKey={'appbar.help.legal.imprint'} />
       </ShowIf>
       <Dropdown.Divider />
     </Fragment>
