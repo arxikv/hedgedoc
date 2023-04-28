@@ -5,7 +5,6 @@
  */
 import { MotdModal } from '../global-dialogs/motd-modal/motd-modal'
 import { BaseAppBar } from '../layout/app-bar/base-app-bar'
-import { Footer } from './footer/footer'
 import { HeaderBar } from './navigation/header-bar/header-bar'
 import type { PropsWithChildren } from 'react'
 import React, { Fragment } from 'react'
@@ -25,7 +24,6 @@ export const LandingLayout: React.FC<PropsWithChildren<unknown>> = ({ children }
         <HeaderBar />
         <div className={'d-flex flex-column justify-content-between flex-fill text-center'}>
           <main>{children}</main>
-          <Footer />
         </div>
       </Container>
     </Fragment>
