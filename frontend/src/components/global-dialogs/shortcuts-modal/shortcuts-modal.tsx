@@ -20,7 +20,7 @@ export const ShortcutsModal: React.FC<ModalVisibilityProps> = ({ show, onHide })
       show={show}
       onHide={onHide}
       showCloseButton={true}
-      title={t('editor.help.shortcuts.title') ?? undefined}>
+      title={t('shortcuts.title') ?? undefined}>
       <Modal.Body>
         <ShortcutsContent />
       </Modal.Body>

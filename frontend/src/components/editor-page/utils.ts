@@ -9,4 +9,5 @@ import { isClientSideRendering } from '../../utils/is-client-side-rendering'
  * Determines if the client is running on a Mac.
  * This is necessary to e.g. determine different keyboard shortcuts.
  */
-export const isMac: () => boolean = () => isClientSideRendering() && navigator.platform.toLowerCase().includes('mac')
+export const isMac: () => boolean = () =>
+  isClientSideRendering() && (navigator.platform.startsWith('Mac') || navigator.platform === 'iPhone')
