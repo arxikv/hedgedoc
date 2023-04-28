@@ -55,12 +55,6 @@
       }
     }
   },
-  "help": {
-    "about": "About HedgeDoc",
-    "legal": "Legal",
-    "help": "Help",
-    "projectLinks": "Project links"
-  },
   "landing": {
     "intro": {
       "markdownWhileLoading": "Loading...",
@@ -153,11 +147,7 @@
     },
     "footer": {
       "releases": "Releases",
-      "poweredBy": "Powered by <0></0>",
-      "imprint": "Imprint",
-      "followUs": "Follow us on <0></0>, <1></1>, <2></2>, <3></3>, and <4></4>.",
-      "privacy": "Privacy",
-      "termsOfUse": "Terms of Use"
+      "poweredBy": "Powered by <0></0>"
     },
     "versionInfo": {
       "issueTracker": "Found a bug? Fill an issue!",
@@ -240,30 +230,6 @@
     "untitledNote": "Untitled",
     "placeholder": "← Start by entering a title here\n===\nVisit {{host}}features if you don't know what to do.\nHappy hacking :)",
     "infoToc": "Structure your note with headings to see a table-of-contents here.",
-    "help": {
-      "shortcuts": {
-        "title": "Shortcuts",
-        "bold": "Make selection bold",
-        "italic": "Make selection italic",
-        "underline": "Underline selection",
-        "strikethrough": "Strike selection through",
-        "mark": "Mark selection",
-        "link": "Add link around selection",
-        "view": "Show only View",
-        "both": "Show View and Edit",
-        "edit": "Show only Edit"
-      },
-      "links": {
-        "title": "Links"
-      },
-      "contacts": {
-        "title": "Contacts",
-        "community": "Join the community",
-        "meetUsOn": "Meet us on {{service}}",
-        "helpTranslating": "Help us translating",
-        "reportIssue": "Report an issue"
-      }
-    },
     "onlineStatus": {
       "online": "Online",
       "you": "(You)"
@@ -514,6 +480,37 @@
       "editNote": "Edit this note"
     }
   },
+  "appbar": {
+    "help": {
+      "help": {
+        "header": "Help",
+        "shortcuts": "Shortcuts",
+        "cheatsheet": "Cheatsheet"
+      },
+      "instance": {
+        "header": "About this instance",
+        "versionInfo": "Running version"
+      },
+      "legal": {
+        "header": "Legal",
+        "privacy": "Privacy Policy",
+        "termsOfUse": "Terms of use",
+        "imprint": "Imprint"
+      },
+      "project": {
+        "header": "Project",
+        "github": "Project on GitHub",
+        "reportIssue": "Report an issue",
+        "helpTranslating": "Help us translating"
+      },
+      "social": {
+        "header": "Social",
+        "discourse": "Join the community",
+        "matrix": "Chat with us on Matrix",
+        "mastodon": "Follow us on Mastodon"
+      }
+    }
+  },
   "common": {
     "yes": "Yes",
     "no": "No",
@@ -644,8 +641,25 @@
       }
     }
   },
+  "shortcuts": {
+    "title": "Shortcuts",
+    "editor": {
+      "header": "Editor",
+      "bold": "Make selection bold",
+      "italic": "Make selection italic",
+      "underline": "Underline selection",
+      "strikethrough": "Strike selection through",
+      "mark": "Mark selection",
+      "link": "Add link around selection"
+    },
+    "viewMode": {
+      "header": "View Mode",
+      "view": "Show only View",
+      "both": "Show View and Edit",
+      "edit": "Show only Edit"
+    }
+  },
   "cheatsheet": {
-    "button": "Cheatsheet",
     "modal": {
       "popup": "Open in new tab",
       "title": "Cheatsheet",
