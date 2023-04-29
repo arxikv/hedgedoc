@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2022 The HedgeDoc developers (see AUTHORS file)
+ * SPDX-FileCopyrightText: 2023 The HedgeDoc developers (see AUTHORS file)
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import { useApplicationState } from '../../../hooks/common/use-application-state'
-import { cypressId } from '../../../utils/cypress-attribute'
-import { UiIcon } from '../../common/icons/ui-icon'
-import { UserAvatarForUser } from '../../common/user-avatar/user-avatar-for-user'
+import { useApplicationState } from '../../../../../hooks/common/use-application-state'
+import { cypressId } from '../../../../../utils/cypress-attribute'
+import { UiIcon } from '../../../../common/icons/ui-icon'
+import { UserAvatarForUser } from '../../../../common/user-avatar/user-avatar-for-user'
 import { SignOutDropdownButton } from './sign-out-dropdown-button'
 import Link from 'next/link'
 import React from 'react'

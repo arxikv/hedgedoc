@@ -5,14 +5,17 @@
  */
 import type { AuthProviderWithCustomName } from '../api/config/types'
 import { AuthProviderType } from '../api/config/types'
+import { CustomBranding } from '../components/common/custom-branding/custom-branding'
 import { useFrontendConfig } from '../components/common/frontend-config-context/use-frontend-config'
-import { RedirectBack } from '../components/common/redirect-back'
+import { HedgeDocLogoWithText } from '../components/common/hedge-doc-logo/hedge-doc-logo-with-text'
+import { Redirect } from '../components/common/redirect'
 import { ShowIf } from '../components/common/show-if/show-if'
-import { LandingLayout } from '../components/landing-layout/landing-layout'
+import { BaseLayout } from '../components/layout/base-layout'
 import { filterOneClickProviders } from '../components/login-page/auth/utils'
 import { ViaLdap } from '../components/login-page/auth/via-ldap'
 import { ViaLocal } from '../components/login-page/auth/via-local'
 import { ViaOneClick } from '../components/login-page/auth/via-one-click'
+import { IntroCustomContent } from '../components/login-page/intro/intro-custom-content'
 import { useApplicationState } from '../hooks/common/use-application-state'
 import React, { useMemo } from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
@@ -55,36 +58,43 @@ export const LoginPage: React.FC = () => {
   }, [authProviders])
 
   if (userLoggedIn) {
-    return <RedirectBack />
+    return <Redirect to={'/history'} />
   }
 
   return (
-    <LandingLayout>
-      <div className='my-3'>
-        <Row className='h-100 d-flex justify-content-center'>
+    <BaseLayout>
+      <Row>
+        <div className={'d-flex align-items-center flex-column'}>
+          <HedgeDocLogoWithText direction={'horizontal'} textColor={'auto'} size={128} />
+          <span className={'my-4'}>
+            <CustomBranding />
+          </span>
+        </div>
+      </Row>
+      <Row className={'mt-1'}>
+        <Col xs={8}>
+          <IntroCustomContent />
+        </Col>
+        <Col xs={4}>
           <ShowIf condition={ldapProviders.length > 0 || localLoginEnabled}>
-            <Col xs={12} sm={10} lg={4}>
-              <ShowIf condition={localLoginEnabled}>
-                <ViaLocal />
-              </ShowIf>
-              {ldapProviders}
-            </Col>
+            <ShowIf condition={localLoginEnabled}>
+              <ViaLocal />
+            </ShowIf>
+            {ldapProviders}
           </ShowIf>
           <ShowIf condition={oneClickProviders.length > 0}>
-            <Col xs={12} sm={10} lg={4}>
-              <Card className='bg-dark mb-4'>
-                <Card.Body>
-                  <Card.Title>
-                    <Trans i18nKey='login.signInVia' values={{ service: '' }} />
-                  </Card.Title>
-                  {oneClickProviders}
-                </Card.Body>
-              </Card>
-            </Col>
+            <Card className='mb-4'>
+              <Card.Body>
+                <Card.Title>
+                  <Trans i18nKey='login.signInVia' values={{ service: '' }} />
+                </Card.Title>
+                {oneClickProviders}
+              </Card.Body>
+            </Card>
           </ShowIf>
-        </Row>
-      </div>
-    </LandingLayout>
+        </Col>
+      </Row>
+    </BaseLayout>
   )
 }
 

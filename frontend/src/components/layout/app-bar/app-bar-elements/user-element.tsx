@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 import { useApplicationState } from '../../../../hooks/common/use-application-state'
-import { SignInButton } from '../../../landing-layout/navigation/sign-in-button'
-import { UserDropdown } from '../../../landing-layout/navigation/user-dropdown'
+import { SignInButton } from './user-menu/sign-in-button'
+import { UserDropdown } from './user-menu/user-dropdown'
 import React from 'react'
 
 /**

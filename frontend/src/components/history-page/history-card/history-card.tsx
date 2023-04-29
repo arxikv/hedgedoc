@@ -48,7 +48,7 @@ export const HistoryCard: React.FC<HistoryEntryProps & HistoryEventHandlers> = (
   const tags = useMemo(
     () =>
       entry.tags.map((tag) => (
-        <Badge className={'bg-dark me-1 mb-1'} key={tag}>
+        <Badge className={'bg-dark text-light me-1 mb-1'} key={tag}>
           {tag}
         </Badge>
       )),
@@ -63,17 +63,17 @@ export const HistoryCard: React.FC<HistoryEntryProps & HistoryEventHandlers> = (
       {...cypressId('history-card')}
       {...cypressAttribute('card-title', entryTitle)}>
       <Card className={styles['card-min-height']} text={'dark'} bg={'light'}>
-        <Card.Body className='p-2 d-flex flex-row justify-content-between'>
+        <Card.Body className='p-2 d-flex flex-row justify-content-between text-center'>
           <div className={'d-flex flex-column'}>
             <PinButton isDark={false} isPinned={entry.pinStatus} onPinClick={onPinEntry} />
           </div>
-          <Link href={`/n/${entry.identifier}`} className='text-decoration-none flex-fill text-dark'>
+          <Link href={`/n/${entry.identifier}`} className='text-decoration-none flex-fill'>
             <div className={'d-flex flex-column justify-content-between'}>
               <Card.Title className='m-0 mt-1dot5' {...cypressId('history-entry-title')}>
                 {entryTitle}
               </Card.Title>
               <div>
-                <div className='text-black-50 mt-2'>
+                <div className='text-dark mt-2'>
                   <UiIcon icon={IconClock} /> {DateTime.fromISO(entry.lastVisitedAt).toRelative()}
                   <br />
                   {lastVisited}

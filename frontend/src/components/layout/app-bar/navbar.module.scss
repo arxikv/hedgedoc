@@ -6,10 +6,20 @@
 
 .side {
   flex: 1 1 0;
+  align-items: center;
 }
 
 .center {
+  align-items: center;
   display: flex;
   justify-content: center;
   flex: 2 1 0;
+}
+
+.branding-separator:has(*) {
+  &::before {
+    content: '\2014';
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
 }

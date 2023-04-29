@@ -50,7 +50,7 @@ export const HistoryTable: React.FC<HistoryEntriesProps & HistoryEventHandlers> 
       bordered
       hover
       size='sm'
-      variant='dark'
+      variant='light'
       className={styles['history-table']}
       {...cypressId('history-table')}>
       <thead>

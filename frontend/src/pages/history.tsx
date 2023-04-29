@@ -7,7 +7,7 @@ import { HistoryContent } from '../components/history-page/history-content/histo
 import { HistoryToolbar } from '../components/history-page/history-toolbar/history-toolbar'
 import { useSafeRefreshHistoryStateCallback } from '../components/history-page/history-toolbar/hooks/use-safe-refresh-history-state'
 import { HistoryToolbarStateContextProvider } from '../components/history-page/history-toolbar/toolbar-context/history-toolbar-state-context-provider'
-import { LandingLayout } from '../components/landing-layout/landing-layout'
+import { BaseLayout } from '../components/layout/base-layout'
 import type { NextPage } from 'next'
 import React, { useEffect } from 'react'
 import { Row } from 'react-bootstrap'
@@ -25,9 +25,9 @@ const HistoryPage: NextPage = () => {
   }, [safeRefreshHistoryStateCallback])
 
   return (
-    <LandingLayout>
+    <BaseLayout>
       <HistoryToolbarStateContextProvider>
-        <h1 className='mb-4'>
+        <h1 className='mb-4 text-center'>
           <Trans i18nKey={'landing.navigation.history'} />
         </h1>
         <Row className={'justify-content-center mt-5 mb-3'}>
@@ -35,7 +35,7 @@ const HistoryPage: NextPage = () => {
         </Row>
         <HistoryContent />
       </HistoryToolbarStateContextProvider>
-    </LandingLayout>
+    </BaseLayout>
   )
 }
 

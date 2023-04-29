@@ -45,7 +45,7 @@ export class ErrorBoundary extends Component<PropsWithChildren<unknown>> {
   render(): ReactNode | undefined {
     if (this.state.hasError) {
       return (
-        <Container className='text-light d-flex flex-column mvh-100'>
+        <Container className='text-light bg-dark d-flex flex-column mvh-100'>
           <div className='text-light d-flex flex-column align-items-center justify-content-center my-5'>
             <h1>An unknown error occurred</h1>
             <p>

@@ -44,7 +44,7 @@ export const HistoryTableRow: React.FC<HistoryEntryProps & HistoryEventHandlers>
   return (
     <tr {...cypressAttribute('entry-title', entryTitle)}>
       <td>
-        <Link href={`/n/${entry.identifier}`} className='text-light' {...cypressId('history-entry-title')}>
+        <Link href={`/n/${entry.identifier}`} className='text-dark' {...cypressId('history-entry-title')}>
           {entryTitle}
         </Link>
       </td>

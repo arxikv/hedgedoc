@@ -54,7 +54,7 @@ export const AccessTokenListEntry: React.FC<AccessTokenListEntryProps & AccessTo
   }, [token.lastUsedAt])
 
   return (
-    <ListGroup.Item className='bg-dark'>
+    <ListGroup.Item>
       <Row>
         <Col className='text-start' {...cypressId('access-token-label')}>
           {token.label}

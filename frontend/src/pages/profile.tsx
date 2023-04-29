@@ -6,7 +6,7 @@
 import { AuthProviderType } from '../api/config/types'
 import { Redirect } from '../components/common/redirect'
 import { ShowIf } from '../components/common/show-if/show-if'
-import { LandingLayout } from '../components/landing-layout/landing-layout'
+import { BaseLayout } from '../components/layout/base-layout'
 import { ProfileAccessTokens } from '../components/profile-page/access-tokens/profile-access-tokens'
 import { ProfileAccountManagement } from '../components/profile-page/account-management/profile-account-management'
 import { ProfileChangePassword } from '../components/profile-page/settings/profile-change-password'
@@ -27,7 +27,7 @@ export const ProfilePage: React.FC = () => {
   }
 
   return (
-    <LandingLayout>
+    <BaseLayout>
       <div className='my-3'>
         <Row className='h-100 flex justify-content-center'>
           <Col lg={6}>
@@ -40,7 +40,7 @@ export const ProfilePage: React.FC = () => {
           </Col>
         </Row>
       </div>
-    </LandingLayout>
+    </BaseLayout>
   )
 }
 

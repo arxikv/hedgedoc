@@ -3,9 +3,10 @@
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
+import { useApplyDarkModeStyle } from '../../hooks/dark-mode/use-apply-dark-mode-style'
+import { useSaveDarkModePreferenceToLocalStorage } from '../../hooks/dark-mode/use-save-dark-mode-preference-to-local-storage'
 import { MotdModal } from '../global-dialogs/motd-modal/motd-modal'
-import { BaseAppBar } from '../layout/app-bar/base-app-bar'
-import { HeaderBar } from './navigation/header-bar/header-bar'
+import { BaseAppBar } from './app-bar/base-app-bar'
 import type { PropsWithChildren } from 'react'
 import React, { Fragment } from 'react'
 import { Container } from 'react-bootstrap'
@@ -15,17 +16,17 @@ import { Container } from 'react-bootstrap'
  *
  * @param children The children that should be rendered on the page.
  */
-export const LandingLayout: React.FC<PropsWithChildren<unknown>> = ({ children }) => {
+export const BaseLayout: React.FC<PropsWithChildren> = ({ children }) => {
+  useApplyDarkModeStyle()
+  useSaveDarkModePreferenceToLocalStorage()
+
   return (
     <Fragment>
       <MotdModal />
       <BaseAppBar />
-      <Container className='text-light d-flex flex-column'>
-        <HeaderBar />
-        <div className={'d-flex flex-column justify-content-between flex-fill text-center'}>
-          <main>{children}</main>
-        </div>
-      </Container>
+      <main>
+        <Container>{children}</Container>
+      </main>
     </Fragment>
   )
 }

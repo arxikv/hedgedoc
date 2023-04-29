@@ -42,12 +42,12 @@ export const ViaLdap: React.FC<ViaLdapProps> = ({ providerName, identifier }) =>
   const onPasswordChange = useOnInputChange(setPassword)
 
   return (
-    <Card className='bg-dark mb-4'>
+    <Card className='mb-4'>
       <Card.Body>
         <Card.Title>
           <Trans i18nKey='login.signInVia' values={{ service: providerName }} />
         </Card.Title>
-        <Form onSubmit={onLoginSubmit}>
+        <Form onSubmit={onLoginSubmit} className={'d-flex gap-3 flex-column'}>
           <UsernameField onChange={onUsernameChange} invalid={!!error} />
           <PasswordField onChange={onPasswordChange} invalid={!!error} />
           <Alert className='small' show={!!error} variant='danger'>

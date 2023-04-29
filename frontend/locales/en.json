@@ -9,7 +9,8 @@
     "content": "It works!"
   },
   "navigation": {
-    "newNote": "New Note"
+    "newNote": "New Note",
+    "history": "History"
   },
   "renderer": {
     "highlightCode": {

@@ -3,11 +3,11 @@
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import { cypressId } from '../../../utils/cypress-attribute'
-import { useFrontendConfig } from '../../common/frontend-config-context/use-frontend-config'
-import { ShowIf } from '../../common/show-if/show-if'
-import { filterOneClickProviders } from '../../login-page/auth/utils'
-import { getOneClickProviderMetadata } from '../../login-page/auth/utils/get-one-click-provider-metadata'
+import { cypressId } from '../../../../../utils/cypress-attribute'
+import { useFrontendConfig } from '../../../../common/frontend-config-context/use-frontend-config'
+import { ShowIf } from '../../../../common/show-if/show-if'
+import { filterOneClickProviders } from '../../../../login-page/auth/utils'
+import { getOneClickProviderMetadata } from '../../../../login-page/auth/utils/get-one-click-provider-metadata'
 import Link from 'next/link'
 import React, { useMemo } from 'react'
 import { Button } from 'react-bootstrap'

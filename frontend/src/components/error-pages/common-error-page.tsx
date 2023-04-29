@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 import { ShowIf } from '../common/show-if/show-if'
-import { LandingLayout } from '../landing-layout/landing-layout'
+import { BaseLayout } from '../layout/base-layout'
 import type { PropsWithChildren } from 'react'
 import React from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -29,8 +29,8 @@ export const CommonErrorPage: React.FC<PropsWithChildren<CommonErrorPageProps>> 
   useTranslation()
 
   return (
-    <LandingLayout>
-      <div className='text-light d-flex flex-column align-items-center justify-content-center my-5'>
+    <BaseLayout>
+      <div className='d-flex flex-column align-items-center justify-content-center my-5'>
         <h1>
           <Trans i18nKey={titleI18nKey} />
         </h1>
@@ -41,6 +41,6 @@ export const CommonErrorPage: React.FC<PropsWithChildren<CommonErrorPageProps>> 
         </ShowIf>
         {children}
       </div>
-    </LandingLayout>
+    </BaseLayout>
   )
 }

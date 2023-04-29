@@ -11,7 +11,7 @@ import { PasswordAgainField } from '../components/common/fields/password-again-f
 import { UsernameField } from '../components/common/fields/username-field'
 import { useFrontendConfig } from '../components/common/frontend-config-context/use-frontend-config'
 import { Redirect } from '../components/common/redirect'
-import { LandingLayout } from '../components/landing-layout/landing-layout'
+import { BaseLayout } from '../components/layout/base-layout'
 import { fetchAndSetUser } from '../components/login-page/auth/utils'
 import { useUiNotifications } from '../components/notifications/ui-notification-boundary'
 import { RegisterError } from '../components/register-page/register-error'
@@ -76,14 +76,14 @@ export const RegisterPage: NextPage = () => {
   }
 
   return (
-    <LandingLayout>
+    <BaseLayout>
       <div className='my-3'>
         <h1 className='mb-4'>
           <Trans i18nKey='login.register.title' />
         </h1>
         <Row className='h-100 d-flex justify-content-center'>
           <Col lg={6}>
-            <Card className='bg-dark mb-4 text-start'>
+            <Card className='mb-4 text-start'>
               <Card.Body>
                 <Form onSubmit={doRegisterSubmit} className={'d-flex flex-column gap-3'}>
                   <UsernameField onChange={onUsernameChange} value={username} />
@@ -109,7 +109,7 @@ export const RegisterPage: NextPage = () => {
           </Col>
         </Row>
       </div>
-    </LandingLayout>
+    </BaseLayout>
   )
 }
 

@@ -1,13 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2022 The HedgeDoc developers (see AUTHORS file)
+ * SPDX-FileCopyrightText: 2023 The HedgeDoc developers (see AUTHORS file)
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import { doLogout } from '../../../api/auth'
-import { clearUser } from '../../../redux/user/methods'
-import { cypressId } from '../../../utils/cypress-attribute'
-import { UiIcon } from '../../common/icons/ui-icon'
-import { useUiNotifications } from '../../notifications/ui-notification-boundary'
+import { doLogout } from '../../../../../api/auth'
+import { clearUser } from '../../../../../redux/user/methods'
+import { cypressId } from '../../../../../utils/cypress-attribute'
+import { UiIcon } from '../../../../common/icons/ui-icon'
+import { useUiNotifications } from '../../../../notifications/ui-notification-boundary'
 import { useRouter } from 'next/router'
 import React, { useCallback } from 'react'
 import { Dropdown } from 'react-bootstrap'

@@ -34,13 +34,13 @@ export const HistoryViewModeToggleButton: React.FC = () => {
     <ToggleButtonGroup type='radio' name='options' dir='auto' className={'button-height'} onChange={onViewStateChange}>
       <Button
         title={t('landing.history.toolbar.cards') ?? undefined}
-        variant={historyToolbarState.viewState === ViewStateEnum.CARD ? 'light' : 'outline-light'}
+        variant={historyToolbarState.viewState === ViewStateEnum.CARD ? 'dark' : 'outline-dark'}
         onClick={() => onViewStateChange(ViewStateEnum.CARD)}>
         <UiIcon icon={IconStickyFill} className={'fa-fix-line-height'} />
       </Button>
       <Button
         {...cypressId('history-mode-table')}
-        variant={historyToolbarState.viewState === ViewStateEnum.TABLE ? 'light' : 'outline-light'}
+        variant={historyToolbarState.viewState === ViewStateEnum.TABLE ? 'dark' : 'outline-dark'}
         title={t('landing.history.toolbar.table') ?? undefined}
         onClick={() => onViewStateChange(ViewStateEnum.TABLE)}>
         <UiIcon icon={IconTable} className={'fa-fix-line-height'} />
