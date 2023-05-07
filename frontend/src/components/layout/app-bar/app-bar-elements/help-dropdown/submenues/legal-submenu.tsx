@@ -9,7 +9,7 @@ import { DropdownHeader } from '../dropdown-header'
 import { TranslatedDropdownItem } from '../translated-dropdown-item'
 import React, { Fragment, useMemo } from 'react'
 import { Dropdown } from 'react-bootstrap'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 export const LegalSubmenu: React.FC = () => {
   useTranslation()

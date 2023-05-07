@@ -3,7 +3,8 @@
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import React, { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
+import React from 'react'
 import { Card, ListGroup } from 'react-bootstrap'
 import { Trans, useTranslation } from 'react-i18next'
 
