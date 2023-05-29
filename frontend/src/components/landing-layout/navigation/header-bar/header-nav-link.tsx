@@ -7,7 +7,7 @@ import type { PropsWithDataCypressId } from '../../../../utils/cypress-attribute
 import { cypressId } from '../../../../utils/cypress-attribute'
 import styles from './header-nav-link.module.scss'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import type { PropsWithChildren } from 'react'
 import React, { useMemo } from 'react'
 import { Nav } from 'react-bootstrap'
@@ -24,11 +24,11 @@ export interface HeaderNavLinkProps extends PropsWithDataCypressId {
  * @param props Other navigation item props
  */
 export const HeaderNavLink: React.FC<PropsWithChildren<HeaderNavLinkProps>> = ({ to, children, ...props }) => {
-  const { route } = useRouter()
+  const pathname = usePathname()
 
   const activeClass = useMemo(() => {
-    return route === to ? styles['nav-link-active'] : ''
-  }, [route, to])
+    return pathname === to ? styles['nav-link-active'] : ''
+  }, [pathname, to])
 
   return (
     <Nav.Item>

@@ -43,9 +43,17 @@ const isDevMode = process.env.NODE_ENV === 'development'
  */
 const isProductionMode = process.env.NODE_ENV === 'production'
 
+/**
+ * Defines if the currently running process is building or executing.
+ *
+ * @type boolean
+ */
+const isBuildTime = !!process.env.BUILD_TIME && isPositiveAnswer(process.env.BUILD_TIME)
+
 module.exports = {
   isTestMode,
   isMockMode,
   isDevMode,
-  isProductionMode
+  isProductionMode,
+  isBuildTime
 }

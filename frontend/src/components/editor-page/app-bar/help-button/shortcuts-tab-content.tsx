@@ -3,10 +3,11 @@
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import { isMac } from '../../utils'
 import React, { Fragment, useMemo } from 'react'
 import { Card, ListGroup, Row } from 'react-bootstrap'
 import { Trans } from 'react-i18next'
+
+export const isMac: () => boolean = () => navigator?.platform?.toLowerCase().includes('mac') ?? false
 
 /**
  * Renders a list of shortcuts usable in HedgeDoc.

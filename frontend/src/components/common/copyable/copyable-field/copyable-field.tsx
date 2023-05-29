@@ -1,9 +1,10 @@
+'use client'
+
 /*
  * SPDX-FileCopyrightText: 2022 The HedgeDoc developers (see AUTHORS file)
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import { isClientSideRendering } from '../../../../utils/is-client-side-rendering'
 import { Logger } from '../../../../utils/logger'
 import { UiIcon } from '../../icons/ui-icon'
 import { ShowIf } from '../../show-if/show-if'
@@ -30,7 +31,7 @@ export const CopyableField: React.FC<CopyableFieldProps> = ({ content, shareOrig
   useTranslation()
 
   const sharingSupported = useMemo(
-    () => shareOriginUrl !== undefined && isClientSideRendering() && typeof navigator.share === 'function',
+    () => shareOriginUrl !== undefined && typeof navigator.share === 'function',
     [shareOriginUrl]
   )
 

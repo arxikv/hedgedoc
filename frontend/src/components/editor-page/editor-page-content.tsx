@@ -12,7 +12,7 @@ import { AppBar, AppBarMode } from './app-bar/app-bar'
 import { ChangeEditorContentContextProvider } from './change-content-context/codemirror-reference-context'
 import { EditorPane } from './editor-pane/editor-pane'
 import { useComponentsFromAppExtensions } from './editor-pane/hooks/use-components-from-app-extensions'
-import { HeadMetaProperties } from './head-meta-properties/head-meta-properties'
+import { useNoteAndAppTitle } from './head-meta-properties/use-note-and-app-title'
 import { useScrollState } from './hooks/use-scroll-state'
 import { useSetScrollSource } from './hooks/use-set-scroll-source'
 import { useUpdateLocalHistoryEntry } from './hooks/use-update-local-history-entry'
@@ -68,13 +68,13 @@ export const EditorPageContent: React.FC = () => {
   )
 
   const editorExtensionComponents = useComponentsFromAppExtensions()
+  useNoteAndAppTitle()
 
   return (
     <ChangeEditorContentContextProvider>
       <ExtensionEventEmitterProvider>
         {editorExtensionComponents}
         <CommunicatorImageLightbox />
-        <HeadMetaProperties />
         <MotdModal />
         <div className={'d-flex flex-column vh-100'}>
           <AppBar mode={AppBarMode.EDITOR} />

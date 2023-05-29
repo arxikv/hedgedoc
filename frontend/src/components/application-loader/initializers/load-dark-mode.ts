@@ -29,9 +29,6 @@ export const loadDarkMode = (): Promise<void> => {
  *         {@link false} if the user doesn't prefer dark mode or if the value couldn't be read from local storage.
  */
 const fetchDarkModeFromLocalStorage = (): DarkModePreference => {
-  if (!isClientSideRendering()) {
-    return DarkModePreference.AUTO
-  }
   try {
     const colorScheme = window.localStorage.getItem(DARK_MODE_LOCAL_STORAGE_KEY)
     if (colorScheme === 'dark') {
