@@ -53,7 +53,7 @@ export const SplitDivider: React.FC<SplitDividerProps> = ({
 
   return (
     <div className={`${styles['split-divider']}`} {...testId('splitter-divider')}>
-      <div className={`bg-light ${styles['middle']} ${forceOpen ? styles['open'] : ''} ${shiftClass}`}>
+      <div className={`${styles['middle']} ${forceOpen ? styles['open'] : ''} ${shiftClass}`}>
         <div className={styles['buttons']}>
           <Button variant={focusLeft ? 'secondary' : 'light'} onClick={onLeftButtonClick}>
             <UiIcon icon={IconArrowLeft} />

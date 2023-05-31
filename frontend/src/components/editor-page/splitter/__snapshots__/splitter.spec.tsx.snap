@@ -20,7 +20,7 @@ exports[`Splitter resize can change size with mouse 1`] = `
       data-testid="splitter-divider"
     >
       <div
-        class="bg-light middle  "
+        class="middle  "
       >
         <div
           class="buttons"
@@ -79,7 +79,7 @@ exports[`Splitter resize can change size with mouse 2`] = `
       data-testid="splitter-divider"
     >
       <div
-        class="bg-light middle  "
+        class="middle  "
       >
         <div
           class="buttons"
@@ -138,7 +138,7 @@ exports[`Splitter resize can change size with mouse 3`] = `
       data-testid="splitter-divider"
     >
       <div
-        class="bg-light middle  "
+        class="middle  "
       >
         <div
           class="buttons"
@@ -197,7 +197,7 @@ exports[`Splitter resize can change size with mouse 4`] = `
       data-testid="splitter-divider"
     >
       <div
-        class="bg-light middle  "
+        class="middle  "
       >
         <div
           class="buttons"
@@ -256,7 +256,7 @@ exports[`Splitter resize can change size with touch 1`] = `
       data-testid="splitter-divider"
     >
       <div
-        class="bg-light middle  "
+        class="middle  "
       >
         <div
           class="buttons"
@@ -315,7 +315,7 @@ exports[`Splitter resize can change size with touch 2`] = `
       data-testid="splitter-divider"
     >
       <div
-        class="bg-light middle  "
+        class="middle  "
       >
         <div
           class="buttons"
@@ -374,7 +374,7 @@ exports[`Splitter resize can change size with touch 3`] = `
       data-testid="splitter-divider"
     >
       <div
-        class="bg-light middle  "
+        class="middle  "
       >
         <div
           class="buttons"
@@ -433,7 +433,7 @@ exports[`Splitter resize can change size with touch 4`] = `
       data-testid="splitter-divider"
     >
       <div
-        class="bg-light middle  "
+        class="middle  "
       >
         <div
           class="buttons"
@@ -492,7 +492,7 @@ exports[`Splitter resize can react to shortcuts 1`] = `
       data-testid="splitter-divider"
     >
       <div
-        class="bg-light middle  shift-right"
+        class="middle  shift-right"
       >
         <div
           class="buttons"
@@ -551,7 +551,7 @@ exports[`Splitter resize can react to shortcuts 2`] = `
       data-testid="splitter-divider"
     >
       <div
-        class="bg-light middle  shift-left"
+        class="middle  shift-left"
       >
         <div
           class="buttons"
@@ -610,7 +610,7 @@ exports[`Splitter resize can react to shortcuts 3`] = `
       data-testid="splitter-divider"
     >
       <div
-        class="bg-light middle  "
+        class="middle  "
       >
         <div
           class="buttons"

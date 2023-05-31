@@ -32,11 +32,7 @@ export const HeaderNavLink: React.FC<PropsWithChildren<HeaderNavLinkProps>> = ({
 
   return (
     <Nav.Item>
-      <Link
-        href={to}
-        passHref={true}
-        className={`nav-link text-light ${activeClass} ${styles['nav-link']}`}
-        {...cypressId(props)}>
+      <Link href={to} passHref={true} className={`nav-link ${activeClass} ${styles['nav-link']}`} {...cypressId(props)}>
         {children}
       </Link>
     </Nav.Item>
