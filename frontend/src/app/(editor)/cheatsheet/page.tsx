@@ -5,7 +5,7 @@
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import { CheatsheetContent } from '../../../components/editor-page/app-bar/cheatsheet/cheatsheet-content'
+import { CheatsheetContent } from '../../../components/cheatsheet/cheatsheet-content'
 import { useApplyDarkModeStyle } from '../../../hooks/dark-mode/use-apply-dark-mode-style'
 import type { NextPage } from 'next'
 import { Container } from 'react-bootstrap'
@@ -15,7 +15,7 @@ const CheatsheetPage: NextPage = () => {
 
   return (
     <Container>
-      <CheatsheetContent></CheatsheetContent>
+      <CheatsheetContent/>
     </Container>
   )
 }

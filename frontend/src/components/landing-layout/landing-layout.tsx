@@ -1,12 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2022 The HedgeDoc developers (see AUTHORS file)
+ * SPDX-FileCopyrightText: 2023 The HedgeDoc developers (see AUTHORS file)
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 import { useApplyDarkModeStyle } from '../../hooks/dark-mode/use-apply-dark-mode-style'
 import { useSaveDarkModePreferenceToLocalStorage } from '../../hooks/dark-mode/use-save-dark-mode-preference-to-local-storage'
-import { MotdModal } from '../common/motd-modal/motd-modal'
-import { Footer } from './footer/footer'
+import { MotdModal } from '../global-dialogs/motd-modal/motd-modal'
+import { BaseAppBar } from '../layout/app-bar/base-app-bar'
 import { HeaderBar } from './navigation/header-bar/header-bar'
 import type { PropsWithChildren } from 'react'
 import React from 'react'
@@ -24,11 +24,11 @@ export const LandingLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div>
       <MotdModal />
-      <Container className='d-flex flex-column mvh-100'>
+      <BaseAppBar />
+      <Container className='d-flex flex-column'>
         <HeaderBar />
         <div className={'d-flex flex-column justify-content-between flex-fill text-center'}>
           <main>{children}</main>
-          <Footer />
         </div>
       </Container>
     </div>

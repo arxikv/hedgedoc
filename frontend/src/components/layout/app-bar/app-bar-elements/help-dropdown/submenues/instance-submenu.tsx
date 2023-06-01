@@ -1,0 +1,17 @@
+/*
+ * SPDX-FileCopyrightText: 2023 The HedgeDoc developers (see AUTHORS file)
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+import { DropdownHeader } from '../dropdown-header'
+import { VersionInfoHelpMenuEntry } from './instance/version-info-help-menu-entry'
+import React, { Fragment } from 'react'
+
+export const InstanceSubmenu: React.FC = () => {
+  return (
+    <Fragment>
+      <DropdownHeader i18nKey={'appbar.help.instance.header'} />
+      <VersionInfoHelpMenuEntry />
+    </Fragment>
+  )
+}

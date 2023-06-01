@@ -35,7 +35,6 @@ const IntroPage: NextPage = () => {
           </div>
           <CoverButtons />
           <IntroCustomContent />
-          <hr className={'mb-5'} />
         </div>
       </EditorToRendererCommunicatorContextProvider>
     </LandingLayout>

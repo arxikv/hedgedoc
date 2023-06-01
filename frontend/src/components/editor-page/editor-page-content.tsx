@@ -1,14 +1,13 @@
 /*
- * SPDX-FileCopyrightText: 2022 The HedgeDoc developers (see AUTHORS file)
+ * SPDX-FileCopyrightText: 2023 The HedgeDoc developers (see AUTHORS file)
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 import { useApplyDarkModeStyle } from '../../hooks/dark-mode/use-apply-dark-mode-style'
 import { useSaveDarkModePreferenceToLocalStorage } from '../../hooks/dark-mode/use-save-dark-mode-preference-to-local-storage'
-import { MotdModal } from '../common/motd-modal/motd-modal'
+import { MotdModal } from '../global-dialogs/motd-modal/motd-modal'
 import { CommunicatorImageLightbox } from '../markdown-renderer/extensions/image/communicator-image-lightbox'
 import { ExtensionEventEmitterProvider } from '../markdown-renderer/hooks/use-extension-event-emitter'
-import { AppBar, AppBarMode } from './app-bar/app-bar'
 import { ChangeEditorContentContextProvider } from './change-content-context/codemirror-reference-context'
 import { EditorPane } from './editor-pane/editor-pane'
 import { useComponentsFromAppExtensions } from './editor-pane/hooks/use-components-from-app-extensions'
@@ -76,17 +75,14 @@ export const EditorPageContent: React.FC = () => {
         {editorExtensionComponents}
         <CommunicatorImageLightbox />
         <MotdModal />
-        <div className={'d-flex flex-column vh-100'}>
-          <AppBar mode={AppBarMode.EDITOR} />
-          <RealtimeConnectionAlert />
-          <div className={'flex-fill d-flex h-100 w-100 overflow-hidden flex-row'}>
-            <Splitter
-              left={leftPane}
-              right={rightPane}
-              additionalContainerClassName={'overflow-hidden position-relative'}
-            />
-            <Sidebar />
-          </div>
+        <RealtimeConnectionAlert />
+        <div className={'flex-fill d-flex h-100 w-100 overflow-hidden flex-row'}>
+          <Splitter
+            left={leftPane}
+            right={rightPane}
+            additionalContainerClassName={'overflow-hidden position-relative'}
+          />
+          <Sidebar />
         </div>
       </ExtensionEventEmitterProvider>
     </ChangeEditorContentContextProvider>

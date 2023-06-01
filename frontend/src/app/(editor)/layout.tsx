@@ -18,11 +18,16 @@ import { getBaseUrls } from '../../utils/base-url-parser'
 import { configureLuxon } from '../../utils/configure-luxon'
 import { getFrontendConfig } from '../../utils/frontend-config-fetcher'
 import type { Metadata } from 'next'
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
+import { AppBar } from '../../components/editor-page/app-bar/app-bar'
 
 configureLuxon()
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+interface RootLayoutProps extends PropsWithChildren {
+  appBar: React.ReactNode
+}
+
+export default async function RootLayout({ children, appBar }: RootLayoutProps) {
   const baseUrls = getBaseUrls()
   const frontendConfig = await getFrontendConfig() //some tests mock the frontend config. Therefore it needs to be fetched in the browser.
 
@@ -37,7 +42,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <FrontendConfigContextProvider config={frontendConfig}>
               <StoreProvider>
                 <ApplicationLoader>
-                  <UiNotificationBoundary>{children}</UiNotificationBoundary>
+                  <UiNotificationBoundary>
+                    <div className={'d-flex flex-column vh-100'}>
+                      {appBar}
+                      {children}
+                    </div>
+                  </UiNotificationBoundary>
                 </ApplicationLoader>
               </StoreProvider>
             </FrontendConfigContextProvider>
