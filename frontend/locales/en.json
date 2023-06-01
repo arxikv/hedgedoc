@@ -55,6 +55,12 @@
       }
     }
   },
+  "help": {
+    "about": "About HedgeDoc",
+    "legal": "Legal",
+    "help": "Help",
+    "projectLinks": "Project links"
+  },
   "landing": {
     "intro": {
       "markdownWhileLoading": "Loading...",
@@ -256,11 +262,6 @@
         "meetUsOn": "Meet us on {{service}}",
         "helpTranslating": "Help us translating",
         "reportIssue": "Report an issue"
-      },
-      "documents": {
-        "title": "Documents",
-        "yamlMetadata": "YAML Metadata",
-        "slideExample": "Slide Example"
       }
     },
     "onlineStatus": {

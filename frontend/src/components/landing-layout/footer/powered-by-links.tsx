@@ -8,7 +8,6 @@ import { useFrontendConfig } from '../../common/frontend-config-context/use-fron
 import { ExternalLink } from '../../common/links/external-link'
 import { TranslatedExternalLink } from '../../common/links/translated-external-link'
 import { TranslatedInternalLink } from '../../common/links/translated-internal-link'
-import { VersionInfoLink } from './version-info/version-info-link'
 import React, { Fragment, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
@@ -38,8 +37,6 @@ export const PoweredByLinks: React.FC = () => {
           <TranslatedExternalLink href={href} i18nKey={'landing.footer.' + i18nKey} />
         </Fragment>
       ))}
-      &nbsp;|&nbsp;
-      <VersionInfoLink />
     </p>
   )
 }
