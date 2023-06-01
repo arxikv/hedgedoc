@@ -218,7 +218,6 @@ export class NotesService {
       .leftJoinAndSelect('group_permission.group', 'group')
       .leftJoinAndSelect('note.userPermissions', 'user_permission')
       .leftJoinAndSelect('user_permission.user', 'user')
-      .leftJoinAndSelect('note.tags', 'tag')
       .where('note.publicId = :noteIdOrAlias')
       .orWhere((queryBuilder) => {
         const subQuery = queryBuilder
@@ -329,15 +328,6 @@ export class NotesService {
   }
 
   /**
-   * Map the tags of a note to a string array of the tags names.
-   * @param {Note} note - the note to use
-   * @return {string[]} string array of tags names
-   */
-  async toTagList(note: Note): Promise<string[]> {
-    return (await note.tags).map((tag) => tag.name);
-  }
-
-  /**
    * Build NotePermissionsDto from a note.
    * @param {Note} note - the note to use
    * @return {NotePermissionsDto} the built NotePermissionDto
@@ -371,6 +361,7 @@ export class NotesService {
    */
   async toNoteMetadataDto(note: Note): Promise<NoteMetadataDto> {
     const updateUser = await this.calculateUpdateUser(note);
+    const latestRevision = await this.revisionsService.getLatestRevision(note);
     return {
       id: note.publicId,
       aliases: await Promise.all(
@@ -379,15 +370,14 @@ export class NotesService {
         ).map((alias) => this.aliasService.toAliasDto(alias, note)),
       ),
       primaryAddress: (await getPrimaryAlias(note)) ?? note.publicId,
-      title: note.title ?? '',
+      title: latestRevision.title,
+      description: latestRevision.description,
+      tags: (await latestRevision.tags).map((tag) => tag.name),
       createdAt: note.createdAt,
-      description: note.description ?? '',
       editedBy: (await this.getAuthorUsers(note)).map((user) => user.username),
       permissions: await this.toNotePermissionsDto(note),
-      tags: await this.toTagList(note),
       version: note.version,
-      updatedAt: (await this.revisionsService.getLatestRevision(note))
-        .createdAt,
+      updatedAt: latestRevision.createdAt,
       updateUsername: updateUser ? updateUser.username : null,
       viewCount: note.viewCount,
     };

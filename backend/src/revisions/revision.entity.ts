@@ -4,6 +4,17 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 import {
+  convertRawFrontmatterToNoteFrontmatter,
+  extractFirstHeading,
+  extractFrontmatter,
+  generateNoteTitle,
+  NoteFrontmatter,
+  parseRawFrontmatterFromYaml,
+} from '@hedgedoc/commons';
+import { defaultNoteFrontmatter } from '@hedgedoc/commons';
+import { parseDocument } from 'htmlparser2';
+import MarkdownIt from 'markdown-it';
+import {
   Column,
   CreateDateColumn,
   Entity,
@@ -14,6 +25,7 @@ import {
 } from 'typeorm';
 
 import { Note } from '../notes/note.entity';
+import { Tag } from '../notes/tag.entity';
 import { Edit } from './edit.entity';
 
 /**
@@ -33,6 +45,23 @@ export class Revision {
     type: 'text',
   })
   patch: string;
+
+  @Column({
+    type: 'text',
+  })
+  title: string;
+
+  @Column({
+    type: 'text',
+  })
+  description: string;
+
+  @ManyToMany((_) => Tag, (tag) => tag.revisions, {
+    eager: true,
+    cascade: true,
+  })
+  @JoinTable()
+  tags: Promise<Tag[]>;
 
   /**
    * The note content at this revision.
@@ -83,6 +112,9 @@ export class Revision {
     newRevision.patch = patch;
     newRevision.content = content;
     newRevision.length = content.length;
+    newRevision.title = '';
+    newRevision.description = '';
+    newRevision.tags = Promise.resolve([]);
     newRevision.note = Promise.resolve(note);
     newRevision.edits = Promise.resolve([]);
     newRevision.yjsStateVector = yjsStateVector ?? null;

@@ -121,6 +121,9 @@ export class RevisionsService {
       createdAt: revision.createdAt,
       authorUsernames: revisionUserInfo.usernames,
       anonymousAuthorCount: revisionUserInfo.anonymousUserCount,
+      title: revision.title,
+      description: revision.description,
+      tags: (await revision.tags).map((tag) => tag.name),
     };
   }
 
@@ -131,6 +134,9 @@ export class RevisionsService {
       content: revision.content,
       length: revision.length,
       createdAt: revision.createdAt,
+      title: revision.title,
+      tags: (await revision.tags).map((tag) => tag.name),
+      description: revision.description,
       authorUsernames: revisionUserInfo.usernames,
       anonymousAuthorCount: revisionUserInfo.anonymousUserCount,
       patch: revision.patch,
