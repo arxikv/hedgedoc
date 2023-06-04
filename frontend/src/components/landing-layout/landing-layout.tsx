@@ -24,7 +24,6 @@ export const LandingLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div>
       <MotdModal />
-      <BaseAppBar />
       <Container className='d-flex flex-column'>
         <HeaderBar />
         <div className={'d-flex flex-column justify-content-between flex-fill text-center'}>

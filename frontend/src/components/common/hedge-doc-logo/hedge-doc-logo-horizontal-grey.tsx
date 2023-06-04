@@ -9,14 +9,17 @@ import React from 'react'
 interface HedgeDocLogoHorizontalGreyProps {
   color: 'dark' | 'light'
   size?: LogoSize | number
+  className?: string
 }
 
 export const HedgeDocLogoHorizontalGrey: React.FC<HedgeDocLogoHorizontalGreyProps> = ({
   color,
-  size = LogoSize.MEDIUM
+  size = LogoSize.MEDIUM,
+  className
 }) => {
   return (
     <svg
+      className={className}
       clipRule='evenodd'
       fillRule='evenodd'
       height={`${size}px`}

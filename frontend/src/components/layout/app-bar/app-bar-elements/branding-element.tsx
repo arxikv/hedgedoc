@@ -8,6 +8,7 @@ import { CustomBranding } from '../../../common/custom-branding/custom-branding'
 import { HedgeDocLogoHorizontalGrey } from '../../../common/hedge-doc-logo/hedge-doc-logo-horizontal-grey'
 import { LogoSize } from '../../../common/hedge-doc-logo/logo-size'
 import styles from '../navbar.module.scss'
+import { BrandingSeparatorDash } from './branding-separator-dash'
 import Link from 'next/link'
 import React from 'react'
 import { Navbar } from 'react-bootstrap'
@@ -21,7 +22,12 @@ export const BrandingElement: React.FC = () => {
   return (
     <Navbar.Brand className={styles.side}>
       <Link href='/' className='text-secondary text-decoration-none d-flex align-items-center'>
-        <HedgeDocLogoHorizontalGrey size={LogoSize.SMALL} color={darkModeActivated ? 'dark' : 'light'} />
+        <HedgeDocLogoHorizontalGrey
+          size={LogoSize.SMALL}
+          className={'w-auto'}
+          color={darkModeActivated ? 'dark' : 'light'}
+        />
+        <BrandingSeparatorDash />
         <CustomBranding inline={true} />
       </Link>
     </Navbar.Brand>

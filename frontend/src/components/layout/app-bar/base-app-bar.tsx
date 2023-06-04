@@ -17,7 +17,7 @@ import { Nav, Navbar } from 'react-bootstrap'
 
 export const BaseAppBar: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <Navbar expand={true} className={'bg-light px-2 py-1 align-items-center'}>
+    <Navbar expand={true} className={'px-2 py-1 align-items-center'}>
       <BrandingElement />
       <Nav className={`d-flex align-items-center ${styles.center}`}>{children}</Nav>
       <Nav className={`d-flex align-items-center justify-content-end gap-2 flex-grow-1 ${styles.side}`}>
