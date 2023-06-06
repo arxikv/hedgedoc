@@ -1,22 +1,3 @@
-.reveal {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-    font-family: inherit;
-    text-transform: initial;
-}
-
-.reveal pre,
-.reveal code {
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
 .reveal.fade {
     opacity: unset;
     -webkit-transition: unset;
