@@ -25,7 +25,11 @@
         <link rel="stylesheet" href="<%- serverURL %>/build/reveal.js/css/theme/black.css" id="theme">
         <% } %>
         <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="<%- serverURL %>/build/reveal.js/lib/css/zenburn.css">
+        <% if(typeof highlightTheme !== 'undefined' && highlightTheme) { %>
+        <link rel="stylesheet" href="<%- serverURL %>/build/reveal.js/lib/css/<%= highlightTheme %>.css">
+        <% } else { %>
+        <link rel="stylesheet" href="<%- serverURL %>/build/reveal.js/lib/css/monokai.css">
+        <% } %>
         <!-- For overwrite reveal.js -->
         <link rel="stylesheet" href="<%- serverURL %>/css/slide.css">
 

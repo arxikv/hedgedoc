@@ -98,6 +98,7 @@ let options =
     hideAddressBar: metaSlideOptions.hideAddressBar,
     hideCursorTime: metaSlideOptions.hideCursorTime,
     hideInactiveCursor: metaSlideOptions.hideInactiveCursor,
+    highlightTheme: metaSlideOptions.highlightTheme,
     history: metaSlideOptions.history,
     keyboard: metaSlideOptions.keyboard,
     loop: metaSlideOptions.loop,
